@@ -2,33 +2,22 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import Layout from "./Layout";
-import {
-  BrowserRouter,
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Favorites from "./components/Favorites/Favorites";
 import About from "./components/About/About";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
-      <Route path="" element={<Home />} />
-      <Route path="favorites" element={<Favorites />} />
-      <Route path="about" element={<About />} />
-    </Route>
-  ),
-  {
-    basename: "/MOVIES_EXPLORER",
-  }
-);
-
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <HashRouter basename="/MOVIES_EXPLORER">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="favorites" element={<Favorites />} />
+          <Route path="about" element={<About />} />
+        </Route>
+      </Routes>
+    </HashRouter>
   </StrictMode>
 );
