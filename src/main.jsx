@@ -16,11 +16,14 @@ import About from "./components/About/About";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route path="" element={<Home />}></Route>
-      <Route path="/favorites" element={<Favorites />}></Route>
-      <Route path="/about" element={<About />}></Route>
+      <Route path="" element={<Home />} />
+      <Route path="favorites" element={<Favorites />} />
+      <Route path="about" element={<About />} />
     </Route>
-  )
+  ),
+  {
+    basename: "/MOVIES_EXPLORER",
+  }
 );
 
 const root = createRoot(document.getElementById("root"));
