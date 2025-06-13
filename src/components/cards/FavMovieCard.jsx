@@ -3,7 +3,7 @@ import React from "react";
 const FavMovieCard = (props) => {
   return (
     <div
-      key={props.id}
+      key={props.id }
       className="h-fit w-[300px] border rounded-2xl p-1.5 border-amber-400 mt-4">
       <div className=" h-[70%] w-full rounded-2xl bg-gray-500">
         <img
