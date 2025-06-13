@@ -10,7 +10,7 @@ import About from "./components/About/About";
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <HashRouter basename="/MOVIES_EXPLORER">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
